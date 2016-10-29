@@ -20,7 +20,7 @@
 <header>
     <div class="inner">
         <h1>Пиксельная точность. Perfect Pixel. Практика. Формы. </h1>
-        <a href="https://github.com/alekskorovin/html-css-practice-1/" class="button">
+        <a href="https://github.com/alekskorovin/html-css-practice-3/" class="button">
             <small>открыть на</small>
             GitHub</a>
     </div>
@@ -34,31 +34,753 @@
                                                                                           class="octicon octicon-link"></span>Пиксельная точность. Perfect Pixel.</a>
             </h2>
 
-            <h2>
-                <a id="practice" class="anchor" href="#practice" aria-hidden="true"><span aria-hidden="true"
-                                                                                          class="octicon octicon-link"></span>Практика.</a>
-            </h2>
-
-
+            <p>
+                Техника <b>Perfect Pixel</b> это текхника вёрстки позволяющая добиться точного соответствия HTML страницы с макетом PSD (пиксель в пиксель).
+            </p>
+            <p>
+                Если сделить из HTML-страницы изображение и наложить на неё изображение макета PSD, обе картинки должны совпасть. Таким образом должны совместиться все компоненты страницы: header, footer, основная часть, заголовки, подзаголовки, параграфы, изображения, фоновые изображения и другие графические элементы.
+            </p>
+            <p>
+                Создание <b>Perfect Pixel</b> вёрстки полезно с точки зрения конкуретного преимущества.
+            </p>
+            <p>
+                Для реализации техники <b>Perfect Pixel</b> как правило используются расширения для браузеров либо скрипты или стили, накладывающие изображение макета поверх страницы, которую мы верстаем.
+            </p>
+            <p>
+                Давайте установим расширение для браузера <b>Chrome</b> <b>Perfect Pixel</b> которое позволит прямо в браузере добавлять поверх нашей HTML-страницы изображение макета.
+            </p>
             <div class="task">
-                <h3>Задание</h3>
+                <h3>Задание 1.1</h3>
                 <ol>
-                    <li>Что можно улучшить в текущей вёрстке используя семантические теги?</li>
+                    <li>Открыть браузер <b>Chrome</b> и перейти по ссылке <a href="https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=ru">PerfectPixel by WellDoneCode</a></li>
+                    <li>
+                        Нажать на кнопку "Установить"
+                        <br/>
+                        <img src="images/pixel-perfect-install.png" alt="Установить Perfect Pixel" />
+                    </li>
+                    <li>
+                        Нажать кнопку "Установить расширение"
+                        <br/>
+                        <img src="images/install-extension.png" alt="Установить расширение"/>
+                    </li>
+                    <li>
+                        Убедиться что расширение установлено &mdash; в правом верхнем углу появится соответствующее сообщение:
+                        <br/>
+                        <img src="images/installed-extension.png" alt="Расширение установлено" />
+                    </li>
                 </ol>
             </div>
-
+            <p>
+                Мы установили расширение для браузера (extension). <b>Расширение</b> или <b>extension</b> (плагин) &mdash; своего рода дополнительная функциональность или мини программа установленная в браузер.
+            </p>
+            <p>
+                Перед использованием плагина или скрипта/стиля для наложения нам потребуется само изображение макета в формате <b>PNG</b> (без потери качества), оно сохраняется в той же папке что и ваш проект, а затем может быть удалено.
+            </p>
+            <div class="task">
+                <h3>Задание 1.2</h3>
+                <ol>
+                    <li>
+                        Скачать архив с проектом <b><a href="https://alekskorovin.github.io/html-css-practice-3/mobi.zip">mobi.zip</a></b> и разархивировать его на рабочем столе. Мы будем работать с этим проектом в течение занятия.
+                    </li>
+                    <li>
+                        Скачать файл <b><a href="https://alekskorovin.github.io/html-css-practice-3/mobi-home-desktop.psd">mobi-home-desktop.psd</a></b> и открыть его в Photoshop-е.
+                    </li>
+                    <li>
+                        Нажать <b>Ctrl Alt Shift S</b> для вызова диалога <b>Сохранить для Web</b>
+                        <br/>
+                        <img src="images/save-for-web.png" alt="Диалог Сохранить для Web" />
+                    </li>
+                    <li>
+                        Выбрать формат сохранения <b>PNG-24</b> и нажать кнопку <b>Сохранить...</b>
+                        <br/>
+                        <img src="images/save-for-web-png.png" alt="Сохранить макет как изображение с форматом PNG-24"/>
+                    </li>
+                    <li>
+                        Сохранить изображение в корне папки проекта <b>mobi</b>
+                        <br/>
+                        <img src="images/save-for-web-png-in-project-folder.png"
+                             alt="Сохранить изображение в корне папки проекта mobi"/>
+                    </li>
+                </ol>
+            </div>
+            <h2>
+                <a id="practice" class="anchor" href="#practice" aria-hidden="true"><span aria-hidden="true"
+                                                                                          class="octicon octicon-link"></span>Практика с Perfect Pixel.</a>
+            </h2>
+            <p>
+                После установки расширения <b>Perfect Pixel</b> и сохранения макета в формате PNG, можно приступать к доводке нашего макета к <b>Perfect Pixel</b> виду.
+            </p>
+            <h3>Исправление шрифта</h3>
+            <p>
+                Перед началом работы с отдельными блоками стоит исправть проблему с используемым в вёрстке шрифтом. Шрифт который используется в HTML-странице мы не задавали, но он наследуется из стилей сторонней библиотеки <b>normalize.css</b> которая была подключена для приведения стилей в разных браузерах к единому виду.
+            </p>
+            <p>
+                Давайте убедимся в этом открыв панель для разработки (DevTools) с помощью <b>F12</b> либо кликнув правой кнопкой по элементу и выбрав последнюю опцию <b>Просмотреть код</b>, либо нажав <b>Ctrl Shift I</b>.
+                <br/>
+                <img src="images/web-developer-open.png" alt="Открыть панель для разработчика Devtools"/>
+            </p>
+            <div class="task">
+                <h3>Задание 1.3</h3>
+                <ol>
+                    <li>
+                        Открыть панель для разработки (DevTools) с помощью F12
+                    </li>
+                    <li>
+                        Выбрать любой элемент с текстом и убедиться что используется шрифт заданный стилем в файле <b>normalize.css</b>
+                        <br />
+                        <img src="images/web-developer-font-family.png" alt="Панель для разработки " />
+                    </li>
+                    <li>
+                        Открыть Photoshop с макетом, кликнуть на текстовый слой
+                        <br/>
+                        <img src="images/photoshop-select-text-layer.png" alt="Открыть Photoshop с макетом, кликнуть на текстовый слой"/>
+                    </li>
+                    <li>
+                        Сделать двойной клик на иконке <b>T</b> для выделения текста и посмотреть на верхнюю панель чтобы убедиться что в PSD-файле используется шрифт <b>Open Sans</b>.
+                        <br/>
+                        <img src="images/photoshop-select-text-layer-font.png" alt="Убедиться что в PSD-файле используется шрифт Open Sans"/>
+                    </li>
+                    <li>
+                        Открыть в браузере сервис <a href="https://fonts.google.com/">Google Fonts</a>, который позволяет бесплатно подключать веб-шрифты в том числе и <b>Open Sans</b>.
+                        <br/>
+                        <img src="images/google-fonts-open-sans.png" alt="Google Fonts с Open Sans" />
+                    </li>
+                    <li>
+                        Кликнуть на ссылку <b>Open Sans</b>
+                        <br/>
+                        <img src="images/google-fonts-open-sans-link.png" alt="Кликнуть на ссылку Open Sans"/>
+                    </li>
+                    <li>
+                        После перехода на детальную страницу с описанием шрифта кликнуть на <b>Select this font</b> чтобы выбрать этотт шрифт.
+                        <br/>
+                        <img src="images/google-fonts-open-sans-select-font.png" alt="Выбрать шрифт"/>
+                    </li>
+                    <li>
+                        Убедиться что шрифт выбран, обратив внимание на появившуюся панель внизу страницы и изменившуюся ссылку <b>Deselect this font</b>
+                        <br/>
+                        <img src="images/google-fonts-open-sans-selected-font.png" alt="Убедиться что шрифт выбран"/>
+                    </li>
+                    <li>
+                        Кликнуть на панель <b>Family Selected</b> чтобы увидеть детальную информацию о том, как можно подключить этот нестандартный веб-шрифт к HTML-странице.
+                        <br/>
+                        <img src="images/google-fonts-open-sans-embed-font.png" alt="Подключение шрифта Open Sans к HTML-странице"/>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                Для подключения нестандартных шрифтов требуется:
+            </p>
+            <ol>
+                <li>Разместить файл в разных форматах на сервере.</li>
+                <li>Добавить в CSS в правиле <b>@font-face</b> саму ссылку на файл, и прописать параметры шрифта.</li>
+                <li>Добавить в CSS для элементов с нестандартным шрифтом свойство <b>font-family</b> со значением <b>'Opens Sans'</b> &mdash; когда название шрифта состоит из более чем одного слова, оно заключается в кавычки.</li>
+            </ol>
+            <p>
+                Сервис <b>Google Fonts</b> делает за нас работу по первым двум пунктам. Давайте в этом убедимся.
+            </p>
+            <div class="task">
+                <h3>Задание 1.4</h3>
+                <ol>
+                    <li>
+                        В браузере из открытой панели с деталями подключения шрифта <b>Open Sans</b> скопировать ссылку на таблицу стилей, которую предоставляет Google
+                        <br />
+                        <img src="images/google-fonts-open-sans-stylesheet.png" alt="Таблица стилей которую генерирует Google"/>
+                    </li>
+                    <li>
+                        Открыть новую вкладку в браузере нажав на кнопку рядом с вкладкой
+                        <br/>
+                        <img src="images/google-fonts-open-sans-new-tab.png" alt="Новая вкладка"/>
+                    </li>
+                    <li>
+                        Скопировать ссылку на таблицу стилей в адресную строку и нажать <b>Enter</b> и убедиться что в CSS есть путь к файлу и другие свойства шрифта.
+                        <br/>
+                        <img src="images/google-fonts-open-sans-stylesheet.png"
+                             alt="Таблица стилей которую генерирует Google"/>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                Теперь вся работа по подключению шрифта сводится к следующим двум пунктам:
+            </p>
+            <ol>
+                <li>Подключение в разделе <b>head</b> перед нашей таблицей стилей, таблицу стилей подключающую с помощью правил <b>@font-face</b> нестандартный шрифт.</li>
+                <li>Прописывание шрифта в CSS для нужных нам селекторов с помощью <b>font-face: 'Opens Sans', sans-serif;</b>.</li>
+            </ol>
+            <div class="task">
+                <h3>Задание 1.5</h3>
+                <ol>
+                    <li>
+                        Открыть в браузере страницу с деталями подключения шрифта <b>Open Sans</b> и скопировать строчку подключения таблицы стилей Google:
+                        <br/>
+                        <img src="images/google-fonts-open-sans-link-stylesheet.png" alt="Скопировать строчку подключения таблицы стилей Google"/>
+                    </li>
+                    <li>
+                        Открыть папку с проектом <b>mobi</b>.
+                    </li>
+                    <li>
+                        Открыть в редакторе кода веб-страницу <b>index.html</b>.
+                    </li>
+                    <li>
+                        В элементе <b>head</b> перед подключением других таблиц стилей добавить скопированную строчку:
+<pre><code class="html">&lt;head&gt;
+    &lt;title&gt;Mobi&lt;/title&gt;
+    &lt;meta name="charset" content="utf-8" /&gt;
+    &lt;meta name="keywords" content="mobile, applications" /&gt;
+    &lt;meta name="description" content="Shop of mobile applications" /&gt;
+    <b>&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"&gt;</b>
+    &lt;link rel="stylesheet" href="vendor/normalize/normalize.css" /&gt;
+    &lt;link rel="stylesheet" href="css/main.css" /&gt;
+    &lt;link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /&gt;
+&lt;/head&gt;
+</code></pre>
+                    </li>
+                    <li>Сохранить <b>index.html</b></li>
+                    <li>
+                        Открыть в браузере страницу с деталями подключения шрифта <b>Open Sans</b> и скопировать строчку для задания шрифта в CSS:
+                        <br/>
+                        <img src="images/google-fonts-open-sans-css-code.png" alt="Скопировать строчку для задания шрифта в CSS"/>
+                    </li>
+                    <li>
+                        Открыть подпапку <b>css</b>
+                    </li>
+                    <li>Открыть в редакторе кода таблицу стилей <b>main.css</b></li>
+                    <li>
+                        Для элемента <b>html</b> добавить шрифт <b>Open Sans</b> вставив скопированную перед этим строчку:
+<pre><code class="css">html {
+    font-size: 10px;
+    <b>font-family: 'Open Sans', sans-serif;</b>
+}</code></pre>
+                    </li>
+                    <li>
+                        Сохранить <b>main.css</b>
+                    </li>
+                    <li>
+                        Открыть <b>index.html</b> в браузере и убедиться что шрифт поменялся.
+                    </li>
+                    <li>
+                        В панели для разработчика можно увидеть произошедшие изменения:
+                        <img src="images/google-fonts-open-sans-devtool-change.png" alt="В панели для разработчика можно увидеть произошедшие изменения"/>
+                    </li>
+                </ol>
+            </div>
+            <h3>Настройка HTML-страницы в браузере</h3>
+            <p>
+                Чтобы совмещать изображение требуется чтобы ширина окна браузера совпадала с шириной PSD-макета. Для настройки ширины мы используем возможности панели для разработчика.
+            </p>
+            <div class="task">
+                <h3>Задание 1.6</h3>
+                <ol>
+                    <li>
+                        Открыть <b>index.html</b> в браузере <b>Chrome</b> и вызвать панель для разработки DevTools <b>F12</b>.
+                    </li>
+                    <li>
+                        Нажать <b>Ctrl Shift M</b> чтобы перейти в режим эмуляции устройств.
+                        <br/>
+                        Выбрать <b>Responsive</b>, <b>1250</b> и <b>600</b> в настройках панели
+                        <br/>
+                        <img src="images/devtools-size.png" alt="Задать адаптивные размеры"/>
+                    </li>
+                    <li>Перегрузить страницу.</li>
+                </ol>
+            </div>
+            <p>
+                Теперь нам надо настроить плагин <b>PerfectPixel</b> для использования локальных файлов.
+            </p>
+            <div class="task">
+                <h3>Задание 1.7</h3>
+                <ol>
+                    <li>
+                        В браузере <b>Chrome</b> с установленным расширением клинуть на кнопку активации расширения <b>Perfect Pixel</b> в правом верхнем углу браузера:
+                        <br/>
+                        <img src="images/extension-button.png" alt="Кнопка активации расширения Perfect Pixel"/>
+                    </li>
+                    <li>
+                        Появится подсказка о том, что надо поменять настройки расширения:
+                        <br/>
+                        <img src="images/extension-warning.png" alt="Подсказка о том, что надо поменять настройки расширения"/>
+                    </li>
+                    <li>
+                        Открыть новую вкладку и вставить туда <code>chrome://extensions/</code>, нажать <b>Enter</b> чтобы перейти в панель настроек:
+                        <br/>
+                        <img src="images/extension-warning-link.png" alt="Ссылка на панель настроек"/>
+                    </li>
+                    <li>
+                        Кликнуть на <b>Разрешить открывать файлы по ссылкам</b>:
+                        <img src="images/extension-setting.png" alt="Настройки плагина"/>
+                    </li>
+                    <li>
+                        Закрыть вкладку с настройками.
+                    </li>
+                    <li>
+                        Снова нажать на кнопку вызова расширения <b>PerfectPixel</b> чтобы открыть панель:
+                        <br/>
+                        <img src="images/extension-opened.png" alt="Perfect Pixel панель"/>
+                    </li>
+                    <li>
+                        Кликнуть на <b>Добавить ваш первый слой</b> чтобы добавить в качестве слоя PNG изображение PSD-макета:
+                        <br/>
+                        <img src="images/extension-new-layer.png" alt="Новый слой"/>
+                    </li>
+                    <li>
+                        Выбрать в качестве слоя изображение <b>mobi-home-desktop.png</b> из корня папки с проектом и нажать <b>Открыть</b>:
+                        <br/>
+                        <img src="images/extension-open-png.png" alt="Изображение слой"/>
+                    </li>
+                    <li>
+                        Убедиться что изображение накладывается поверх нашего макета:
+                        <br/>
+                        <img src="images/extension-image-above.png" alt="Слой поверх изображения"/>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                Теперь в браузере мы можем видеть насколько наша вёрстка соответствует макету, и в случае не соответствия, мы можем обновить стили и привести вёрстку к более подходящему виду.
+            </p>
+            <h3>Обновление стилей</h3>
+            <p>
+                Всё что нам надо чтобы привести вёрстку к нужному виду это обновить стили для отдельных элементов, чтобы сгладить явные несоответствия.
+                При этом следует учитывать, что ширина букв может быть немного разная в макете и тем как отображает текст браузер.
+            </p>
+            <p>
+                Было бы неплохо сразу видеть и сохранять результаты правок CSS. Для этого нам поможет панель для разработчиков DevTools.
+            </p>
+            <div class="task">
+                <h3>Задание 2.1</h3>
+                <ol>
+                    <li>
+                        В открытой панели для разработчиков перейти к вкладке <b>Sources</b>
+                        и кликнуть на папку проекта правой кнопкой чтобы увидеть опцию <b>Add folder to workspace</b> и кликнуть на неё
+                        <br/>
+                        <img src="images/devtools-sources-folder.png" alt="Добавить папку в workspace"/>
+                    </li>
+                    <li>
+                        В диалоге выбрать папку с проектом <b>mobi</b>:
+                        <br/>
+                        <img src="images/devtools-sources-folder-dektop.png" alt="Выбрать папку с проектом"/>
+                    </li>
+                    <li>
+                        Выбрать <b>Разрешить</b> в следующем диалоге:
+                        <br/>
+                        <img src="images/devtools-sources-folder-allow.png" alt="Разрешить"/>
+                    </li>
+                    <li>
+                        Теперь снова пойти во вкладку <b>Sources</b> где выбрать файл <b>main.css</b> и нажать правую кнопку:
+                        <br/>
+                        <img src="images/devtools-network-resource.png" alt="DevTools Network resource"/>
+                    </li>
+                    <li>
+                        Выбрать <b>Map to network resource...</b> и кликнуть левой кнопкой мыши<br>
+                        <img src="images/devtools-map-to-network-resource.png" alt="Map to network resource"/>
+                    </li>
+                    <li>
+                        Нажать <b>Enter</b>
+                    </li>
+                </ol>
+            </div>
+            <p>Теперь изменения сделанные в панели для разработчика сразу же сохранятся в нашем файле <b>main.css</b>.</p>
+            <h4>header</h4>
+            <p>
+                При вгляде на <b>header</b> с панелью <b>PerfectPixel</b>, где можно менять прозрачность наложенного изображения (сдвинув в крайний левый и правый угол), видно, что:
+            </p>
+            <ul>
+                <li>Логотип необходимо немного сдвинуть вправо</li>
+                <li>Расстояние между пунктами меню стоит подкорректировать</li>
+            </ul>
+            <h5>Стили для логотипа</h5>
+            <div class="task">
+                <h3>Задание 2.2</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <code>&lt;a class="header-logo"&gt;...</code>
+                        <br/>
+                        <img src="images/header-logo.png" alt="Добавить стиль для .header-logo"/>
+                        <br/>
+                        и кликнуть на пустое место справа от стилей
+                    </li>
+                    <li>
+                        Напечатать <code>padding-left</code>, затем нажать <b>Tab</b> и напечатать <code>1px</code> и нажать <b>Enter</b>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что логотип стал на место.</li>
+                </ol>
+            </div>
+            <h5>Стили для меню</h5>
+            <div class="task">
+                <h3>Задание 2.3</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <code>&lt;a class="header-menu"&gt;...</code>
+                    </li>
+                    <li>
+                        Кликнуть на пустое место справа от стилей для <b>.header-menu</b>.
+                    </li>
+                    <li>
+                        Напечатать <code>letter-spacing</code>, затем нажать <b>Tab</b> и напечатать <code>-0.013rem</code> и нажать <b>Enter</b>
+                        <br/>
+                        <img src="images/header-menu.png" alt="Добавить стиль для .header-menu"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что пункты меню стали более ровно.</li>
+                </ol>
+            </div>
+            <p>Не смотря на то, что пункт меню <b>Home</b> не выровнен, если у нас остальные элементы стали как надо, значит проблема с выравниванием в макете, либо проблема из-за разницы ширины букв в Photoshop-е и браузере.</p>
+            <h4>carousel</h4>
+            <p>
+                Чтобы увидеть и подправить стили карусели нужно остановить её, нажав на стрелку вправо и затем вернувшись влево.
+                Так же можно сместить панель <b>PerfectPixel</b> немного левее.
+            </p>
+            <img src="images/carousel.png" alt="Carousel"/>
+            <p>
+                При вгляде на <b>carousel</b> с панелью <b>PerfectPixel</b>, видно, что:
+            </p>
+            <ul>
+                <li>Стрелки должны быть чуть ниже</li>
+                <li>Телефон смещён правее</li>
+                <li>Текст должен быть выше</li>
+                <li>Высота карусели с заборчатым фоном должна быть чуть меньше</li>
+            </ul>
+            <h5>Стили для стрелок</h5>
+            <div class="task">
+                <h3>Задание 2.4</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <br/> <code>&lt;div class="carousel-control carousel-prev"&gt;...</code>
+                        <br/>
+                        <img src="images/carousel-control.png" alt="Стрелки"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.carousel-control</b> &mdash; <b>margin-top</b> и исправить его с <code>-3.2rem</code> на <code>-1.4rem</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что стрелки стали на место.</li>
+                </ol>
+            </div>
+            <img src="images/carousel-arrows.png" alt="Стрелки"/>
+            <p>
+                В панели для разработчика при выделенном числовом значении свойства, например <b>margin-top</b> с выделенным <code>-1.2rem</code>, если нажать стрелку <b>вверх</b> на клавиатуре, значение увеличится на единицу, если нажать <b>вниз</b> &mdash; уменьшится на единицу. Таким образом можно быстро подгонять значения.
+            </p>
+            <h5>Стили для стрелок</h5>
+            <div class="task">
+                <h3>Задание 2.5</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <code>&lt;div class="carousel-img"&gt;...</code> в первом слайде <b>li</b> карусели.
+                        <br/>
+                        <img src="images/carousel-img.png" alt="выбранный элемент carousel-img"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.carousel-control</b> &mdash; <b>width</b> и исправить его с <code>40%</code> на <code>39.3%</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>
+                        Кликнуть на пустое место справа от стиля <b>width: 39.3%</b> и напечатать <code>text-align</code> затем нажать <b>Tab</b> и напечатать <code>right</code> и <b>Enter</b>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что телефон на месте.</li>
+                </ol>
+            </div>
+            <img src="images/carousel-phone.png" alt="Телефон"/>
+            <h5>Стили для текста</h5>
+            <div class="task">
+                <h3>Задание 2.6</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <br/><code>&lt;div class="carousel-content"&gt;...</code> в первом слайде <b>li</b> карусели.
+                        <br/>
+                        <img src="images/carousel-content.png" alt="выбранный элемент carousel-content"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.carousel-content</b> &mdash; <b>margin-top</b> и исправить его с <code>12%</code> на <code>10.4%</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что верхняя часть контента на месте. (Последняя строка чуть не вписана, но остальные встали на место, поэтому последней строкой можно пренебречь, иначе необходимо подгонять отступы заголовка и межстрочное расстояние параграфа).</li>
+                </ol>
+            </div>
+            <p>
+                Исправим положение кнопки <b>Sign up now</b>
+            </p>
+            <div class="task">
+                <h3>Задание 2.7</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <code>&lt;div class="carousel-button"&gt;...</code> в первом слайде <b>li</b> карусели.
+                        <br/>
+                        <img src="images/carousel-button.png" alt="выбранный элемент carousel-button"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.carousel-button</b> &mdash; <b>margin-top</b> и исправить его с <code>3.4rem</code> на <code>2.9rem</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>padding</b> и исправить его на <code>0.7rem 1rem 1.2rem 4.6rem</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что кнопка на месте.</li>
+                </ol>
+            </div>
+            <img src="images/carousel-content-button.png" alt="Стили для кнопки"/>
+            <h5>Стили для фона карусели</h5>
+            <div class="task">
+                <h3>Задание 2.8</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <code>&lt;div class="carousel"&gt;...</code>
+                        <br/>
+                        <img src="images/carousel-bg.png" alt="выбранный элемент carousel"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.carousel</b> &mdash; <b>max-height</b> и исправить его на <code>48.2rem</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что зубчатый фон на месте.</li>
+                </ol>
+            </div>
+            <img src="images/carousel-bg-fixed.png" alt="Исправленный фон карусели"/>
+            <h4>features</h4>
+            <p>
+                Проскроллим страницу вниз чтобы увидеть компонент <b>features</b> и включим <b>PerfectPixel</b>.
+            </p>
+            <img src="images/features.png" alt="Features не совпадает с макетом"/>
+            <p>
+                При вгляде на <b>features</b> с панелью <b>PerfectPixel</b>, видно, что:
+            </p>
+            <ul>
+                <li>Отступ сверху мал</li>
+                <li>Блок слишком узок по ширине</li>
+                <li>Отступ над текстом велик</li>
+                <li>Высота всего блока больше чем надо</li>
+            </ul>
+            <h5>Отступ сверху</h5>
+            <div class="task">
+                <h3>Задание 2.9</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <br/> <code>&lt;div class="features-list"&gt;...</code>
+                        <br/>
+                        <img src="images/features-padding-top.png" alt="выбранный элемент features-list"/>
+                    </li>
+                    <li>
+                        Кликнуть на значения стилей для <b>.features-list</b> &mdash; <b>padding</b> и исправить его на <code>6.5rem 0 4.7rem</code> и нажать <b>Enter</b>.
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что изображения стали на место по высоте.</li>
+                </ol>
+            </div>
+            <img src="images/features-padding-top-fixed.png" alt="Исправленный верхний отступ"/>
+            <h5>Ширина блока</h5>
+            <div class="task">
+                <h3>Задание 2.10</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <br/> <code>&lt;div class="features-list"&gt;...</code>
+                        <br/>
+                        <img src="images/features-padding-top.png" alt="выбранный элемент features-list"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.features-list</b> и дописать перед ним класс <b>.features</b> чтобы добавить веса этому селектору.
+                        <br/>
+                        <img src="images/features-width-fix.png" alt="Меняем селектор"/>
+                    </li>
+                    <li>
+                        Кликнуть на свободное место от стилей для <b>.features .features-list</b> и напечатать <code>max-width</code> нажать <b>Tab</b> и напечатать <code>1072px</code>
+                        <br/>
+                        <img src="images/features-width-2.png" alt="Добавление свойства max-width"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что блоки стали более отцентрированы. Полностью отцентрировать возможно и не удастся, из-за различий в расстояниях в макете.</li>
+                </ol>
+            </div>
+            <img src="images/features-width-fix-2.png" alt="Исправленная ширина блока"/>
+            <h5>Отступ над текстом</h5>
+            <div class="task">
+                <h3>Задание 2.11</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>h3</b> первого элемента списка
+                        <br/>
+                        <img src="images/features-content-1.png" alt="выбранный элемент h3"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.features-list h3</b> и изменить значение свойства <b>margin</b> на <code>2.2rem 3rem 0 3rem</code>.
+                        <br/>
+                        <img src="images/features-content-2.png" alt="Меняем margin для h3"/>
+                    </li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>p</b> первого элемента списка
+                        <br/>
+                        <img src="images/features-content-p.png" alt="выбранный элемент p"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.features-list p</b> и изменить значение свойства <b>margin</b> на <code>0rem 4rem 0 4rem</code>.
+                        А межстрочное расстояние <b>line-height</b> на <code>1.74</code>
+                        <br/>
+                        <img src="images/features-content-p-fixed.png" alt="Меняем margin для p"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что текст выровнен по вертикали с макетом.</li>
+                </ol>
+            </div>
+            <img src="images/features-content-fixed.png" alt="Исправленные стили для текста"/>
+            <h5>Высота всего блока</h5>
+            <div class="task">
+                <h3>Задание 2.12</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>.features-list</b> первого элемента списка
+                        <br/>
+                        <img src="images/features-list.png" alt="выбранный элемент .features-list"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.features .features-list</b> и изменить значение свойства <b>padding</b> на <code>6.5rem 0 4.3rem</code>.
+                        <br/>
+                        <img src="images/features-list-fixed.png" alt="Меняем padding для .features-list"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что высота <b>features</b> совпадает с макетом.</li>
+                </ol>
+            </div>
+            <img src="images/features-fixed.png" alt="Исправленные стили для features"/>
+            <h4>content</h4>
+            <p>
+                Прокрутим страницу ещё ниже чтобы посмотреть что нужно исправить для блока <b>content</b>
+            </p>
+            <ul>
+                <li>Отступ сверху и высота велики</li>
+                <li>Изображение смещено</li>
+                <li>Текст смещён</li>
+            </ul>
+            <h5>Отступ сверху и высота</h5>
+            <div class="task">
+                <h3>Задание 2.13</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>.content-inner</b>
+                        <br/>
+                        <img src="images/content-inner.png" alt="выбранный элемент .content-inner"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-inner</b> и изменить значение свойства <b>padding</b> на <code>2.3rem 5rem 3.1rem</code>.
+                        <br/>
+                        <img src="images/content-inner-fixed.png" alt="Меняем padding для .content-inner"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что высота <b>content</b> совпадает с макетом.</li>
+                </ol>
+            </div>
+            <img src="images/content-height-fixed.png" alt="Исправлена высота content"/>
+            <h5>Изображение</h5>
+            <div class="task">
+                <h3>Задание 2.14</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>.content-img</b>
+                        <br/>
+                        <img src="images/content-img.png" alt="выбранный элемент .content-img"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-img</b> и изменить значение свойства <b>margin</b> на <code>1.6rem 9.8rem 1.9rem 1.6rem</code>.
+                        <br/>
+                        <img src="images/content-img-fixed.png" alt="Меняем margin для .content-img"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что избражение и текст слева выровнены.</li>
+                </ol>
+            </div>
+            <img src="images/content-img-fixed-2.png" alt="Исправлена высота content"/>
+            <h5>Текст</h5>
+            <div class="task">
+                <h3>Задание 2.15</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать дочерний элемент <b>h1</b> элемента с классом <b>.content-inner</b>
+                        <br/>
+                        <img src="images/content-h1.png" alt="выбранный элемент .content-inner h1"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-inner h1</b> и изменить значение свойства <b>margin-bottom</b> на <code>0.3rem</code>.
+                        <br/>
+                        <img src="images/content-h1-fixed.png" alt="Меняем margin для .content-inner h1"/>
+                    </li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент с классом <b>.content-img</b>
+                        <br/>
+                        <img src="images/content-img-2.png" alt="выбранный элемент .content-img"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-img</b> и изменить значение свойства <b>margin</b> на <code>2.8rem 9.8rem 1.9rem 1.6rem</code>.
+                        <br/>
+                        <img src="images/content-img-2-fixed.png" alt="Меняем margin для .content-img"/>
+                    </li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать дочерний элемент <b>h2</b> элемента с классом <b>.content-inner</b>
+                        <br/>
+                        <img src="images/content-h2.png" alt="выбранный элемент p"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-inner h2</b> и изменить значение свойства <b>margin-bottom</b> на <code>2rem</code>.
+                        <br/>
+                        <img src="images/content-h2-fixed.png" alt="Меняем margin для .content-inner h2"/>
+                    </li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать дочерний элемент <b>p</b> элемента с классом <b>.content-inner</b>
+                        <br/>
+                        <img src="images/content-p.png" alt="выбранный элемент p"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.content-inner p</b> и изменить значение свойства <b>margin-top</b> на <code>2rem</code> а <b>line-height</b> на <code>1.74</code>.
+                        <br/>
+                        <img src="images/content-p-fixed.png" alt="Меняем margin для .content-inner p"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что текст стал выровнен. Ширина букв в браузере немного другая, потому результат когда совпадают первые четыре строки является приемлемым.</li>
+                </ol>
+            </div>
+            <img src="images/content-fixed.png" alt="Исправлена высота content"/>
+            <h4>footer</h4>
+            <div class="task">
+                <h3>Задание 2.16</h3>
+                <ol>
+                    <li>Открыть панель расширения <b>PerfectPixel</b></li>
+                    <li>Установить прозрачность на 50%</li>
+                    <li>
+                        С помощью панели для разработчика в DOM-элементах выбрать элемент <b>.footer</b>
+                        <br/>
+                        <img src="images/footer.png" alt="выбранный элемент .footer"/>
+                    </li>
+                    <li>
+                        Кликнуть на селекторе <b>.footer</b> и изменить значение свойства <b>padding</b> на <code>3rem 5rem</code>.
+                        <br/>
+                        <img src="images/footer-fixed.png" alt="Меняем padding для .footer"/>
+                    </li>
+                    <li>Обновить страницу в браузере, включить <b>PerfectPixel</b> и попеременно меняя прозрачность на 0 и на 100% убедиться что текст в footer-е выровнен по вертикали. Горизонтальное выравнивание видимо неверно в макете.</li>
+                </ol>
+            </div>
+            <img src="images/footer-fixed-final.png" alt="Исправлен дизайн footer-а"/>
+            <h2><a href="https://alekskorovin.github.io/html-forms/">Формы</a></h2>
             <div class="task">
                 <h3>Домашнее задание</h3>
                 <ol>
-                    <li>Пройти курс <b>Знакомство с формами</b>.</li>
-                    <li>Кто ещё не отправил &mdash; отправить мне ссылку на свой профиль.</li>
+                    <li>Сверстать страницу с контактной формой используя технику Perfect Pixel по PSD <a href="mobi-contact-desktop.psd">mobi-contact-desktop.psd</a> и отправить в Slack либо выложить на FTP. Вместо элементов формы можно использовать элементы <b>div</b>.</li>
+                    <li>Начать либо пройти курс <b>Знакомство с формами</b>.</li>
                 </ol>
             </div>
 
         </section>
 
         <aside id="sidebar">
-            <a href="https://github.com/alekskorovin/html-css-practice-1//archive/gh-pages.zip" class="button">
+            <a href="https://github.com/alekskorovin/html-css-practice-3//archive/gh-pages.zip" class="button">
                 <small>Download</small>
                 .zip file
             </a>
